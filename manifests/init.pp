@@ -67,6 +67,10 @@ class grafana (
   $timezone_offset    = '0000',
   $playlist_timespan  = '1m'
 ) {
+  Exec {
+    path => [ '/bin', '/usr/bin', '/usr/local/bin' ],
+    cwd  => '/',
+  }
 
   # The anchor resources allow the end user to establish relationships
   # to the "main" class and preserve the relationship to the
