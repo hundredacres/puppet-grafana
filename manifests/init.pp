@@ -64,6 +64,8 @@ class grafana (
   $influxdb_dbpath    = '/db/grafana',
   $influxdb_user      = 'grafana',
   $influxdb_pass      = 'grafana',
+  $influxdb_grafana_user      = 'grafana',
+  $influxdb_grafana_pass      = 'grafana',
   $timezone_offset    = '0000',
   $playlist_timespan  = '1m'
 ) {
