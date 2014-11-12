@@ -28,6 +28,13 @@ function (Settings) {
       }
     <% end -%>
 
+    <% if scope.lookupvar('grafana::opentsdb_host') != '' -%>
+      opentsdb: {
+        type: 'opentsdb',
+        url: "http://<%= scope.lookupvar('grafana::opentsdb_host') %>:<%= scope.lookupvar('grafana::opentsdb_port') %>",
+      },
+    <% end %>
+
     <% if scope.lookupvar('grafana::influxdb_host') != '' -%>
       influxdb: {
         type: 'influxdb',
@@ -35,7 +42,7 @@ function (Settings) {
         username: '<%= scope.lookupvar('grafana::influxdb_user') %>',
         password: '<%= scope.lookupvar('grafana::influxdb_pass') %>'
       },
-      'grafana': {
+      grafana: {
           type: 'influxdb',
           url: "http://<%= scope.lookupvar('grafana::influxdb_host') %>:<%= scope.lookupvar('grafana::influxdb_port') %>/db/grafana",
           username: '<%= scope.lookupvar('grafana::influxdb_grafana_user') %>',

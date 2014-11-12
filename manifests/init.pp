@@ -6,7 +6,7 @@
 #
 # [*version*]
 #   Version of grafan to be installed.
-#   Default is '1.6.1'
+#   Default is '1.8.1'
 # [*install_dir*]
 #   Install directory of grafana.
 #   Default is '/opt'
@@ -20,9 +20,15 @@
 #   Hostname of elasticsearch. You will need an elasticsearch
 #   for saving dashboards
 #   Default is '' (empty)
-# [*elasticsearch_por*]
+# [*elasticsearch_port*]
 #   Port of elasticsearch service.
 #   Default is 9200
+# [*opentsdb_host*]
+#   Hostname of OpenTSDB.
+#   Default is '' (empty)
+# [*opentsdb_port*]
+#   Port of OpenTSDB service.
+#   Default is 4242
 # [*influxdb_host*]
 #   Hostname of influxdb.
 #   Default is '' (empty)
@@ -53,12 +59,14 @@
 #   Default is '1m'
 #
 class grafana (
-  $version            = '1.6.1',
+  $version            = '1.8.1',
   $install_dir        = '/opt',
   $graphite_host      = 'localhost',
   $graphite_port      = 80,
   $elasticsearch_host = '',
   $elasticsearch_port = 9200,
+  $opentsdb_host      = '',
+  $opentsdb_port      = 4242,
   $influxdb_host      = '',
   $influxdb_port      = 8086,
   $influxdb_dbpath    = '/db/grafana',
