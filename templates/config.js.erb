@@ -23,13 +23,13 @@ function (Settings) {
     <% if scope.lookupvar('grafana::influxdb_host') != '' -%>
       influxdb: {
         type: 'influxdb',
-        url: "http:/<%= scope.lookupvar('grafana::influxdb_host') %>:<%= scope.lookupvar('grafana::influxdb_port') %><%= scope.lookupvar('grafana::influxdb_dbpath') %>",
+        url: "http://<%= scope.lookupvar('grafana::influxdb_host') %>:<%= scope.lookupvar('grafana::influxdb_port') %><%= scope.lookupvar('grafana::influxdb_dbpath') %>",
         username: '<%= scope.lookupvar('grafana::influxdb_user') %>',
         password: '<%= scope.lookupvar('grafana::influxdb_pass') %>'
       },
       'grafana': {
           type: 'influxdb',
-          url: "http:/<%= scope.lookupvar('grafana::influxdb_host') %>:<%= scope.lookupvar('grafana::influxdb_port') %>/db/grafana",
+          url: "http://<%= scope.lookupvar('grafana::influxdb_host') %>:<%= scope.lookupvar('grafana::influxdb_port') %>/db/grafana",
           username: '<%= scope.lookupvar('grafana::influxdb_grafana_user') %>',
           password: '<%= scope.lookupvar('grafana::influxdb_grafana_pass') %>',
           grafanaDB: true
