@@ -1,0 +1,55 @@
+{
+ "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat"
+    },
+    {
+      "operatingsystem": "CentOS"
+    },
+    {
+      "operatingsystem": "Scientific"
+    },
+    {
+      "operatingsystem": "Debian"
+    },
+    {
+      "operatingsystem": "Ubuntu"
+    }
+  ],
+  "requirements": [
+    {
+      "name": "pe",
+      "version_requirement": "3.x"
+    },
+    {
+      "name": "puppet",
+      "version_requirement": ">=2.7.20 <4.0.0"
+    }
+  ],
+  "name": "dwerder-grafana",
+  "version": "1.0.0",
+  "source": "git clone https://github.com/echocat/puppet-grafana.git",
+  "author": "Daniel Werdermann",
+  "license": "Mozilla Public License Version 2.0",
+  "summary": "Grafana module",
+  "description": "This module installs and configures Grafana to be used with graphite and co.",
+  "project_page": "https://github.com/echocat/puppet-grafana",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 3.2.0"
+    }
+  ],
+  "types": [
+
+  ],
+  "checksums": {
+    "LICENSE": "fa66c45f9acf374acdbe05f28e7bcc0f",
+    "Modulefile": "fc164df89075edf9fdeaeb226dc58de7",
+    "README.md": "b9f52888e1f3548c84761a68ed298545",
+    "manifests/config.pp": "b0f43ea7d599736ffbe805f682222ace",
+    "manifests/init.pp": "9a8839949e056d90c207b60d85b66849",
+    "manifests/install.pp": "e6dea0b0e03f989af6a120c0107a47d9",
+    "templates/config.js.erb": "ac48f12f7a3576c7500f1b9a9880003d"
+  }
+}
