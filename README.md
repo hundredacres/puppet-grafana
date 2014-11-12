@@ -6,6 +6,8 @@
 2. [Module Description - What does this module do?](#module-description)
 3. [Setup - The basics of getting started with grafana](#setup)
     * [Beginning with grafana - Installation](#beginning-with-grafana)
+    * [Configure Graphite and Elasticsearch](#configure-graphite-and-elasticsearch)
+    * [Configure InlfuxDB](#configure-inlfuxdb)
 4. [Usage - The class and available configurations](#usage)
 7. [Requirements](#requirements)
 5. [Limitations - OS compatibility, etc.](#limitations)
@@ -26,7 +28,7 @@ moment you will need modules like apache or nginx to configure the webservices w
 
 **What grafana affects:**
 
-* dowloads/installs/configures grafana
+* dowloads/installs/configures files for Grafana
 
 ###Beginning with Grafana
 
@@ -58,6 +60,127 @@ Here we configure Apache 2.2 with Grafana on port 8080.
   class { 'grafana': }
 ```
 
+###Configure Graphite and Elasticsearch
+
+```puppet
+  class {'grafana':
+    graphite_host      => 'graphite.my.domain',
+    elasticsearch_host => 'elasticsearch.my.domain',
+  }
+```
+
+###Configure InlfuxDB
+
+When we use InfluxDB we have to set the _user_ and _password_ to access the influxdb_dbpath.
+And we need the user and password for the database /db/grafana, which has to exist on the influxdb.
+
+```puppet
+  class {'grafana':
+    influxdb_host   => 'influxdb.my.domain',
+    influxdb_dbpath => '/db/dbname',
+    influxdb_user   => 'grafana',
+    influxdb_pass   => 'grafana',
+    influxdb_grafana_user   => 'grafana',
+    influxdb_grafana_pass   => 'grafana',
+  }
+```
+
+##Usage
+
+####Class: `grafana`
+
+This is the primary class. And the only one which should be used.
+
+**Parameters within `graphite`:**
+
+#####`version`
+
+Version of grafan to be installed.
+Default is '1.8.1'
+
+#####`install_dir`
+
+Install directory of grafana.
+Default is '/opt'
+
+#####`graphite_host`
+
+Hostname of graphite server.
+Default is 'localhost'
+
+#####`graphite_port`
+
+Port of graphite service.
+Default is 80
+
+#####`elasticsearch_host`
+
+Hostname of elasticsearch. You will need an elasticsearch
+for saving dashboards
+Default is '' (empty)
+
+#####`elasticsearch_port`
+
+Port of elasticsearch service.
+Default is 9200
+
+#####`opentsdb_host`
+
+Hostname of OpenTSDB.
+Default is '' (empty)
+
+#####`opentsdb_port`
+
+Port of OpenTSDB service.
+Default is 4242
+
+#####`influxdb_host`
+
+Hostname of influxdb.
+Default is '' (empty)
+
+#####`influxdb_port`
+
+Port of influxdb.
+Default is 8086
+
+#####`influxdb_dbpath`
+
+DB path of influxdb.
+Default is '/db/grafana'
+
+#####`influxdb_user`
+
+Name of db user.
+Default is 'grafana'
+
+#####`influxdb_pass`
+
+Password of db user.
+Default is 'grafana'
+
+#####`timezone_offset`
+
+If you experiance problems with zoom, it is probably caused by timezone diff between
+your browser and the graphite-web application. timezoneOffset setting can be used to have Grafana
+translate absolute time ranges to the graphite-web timezone.
+Example:
+  If TIME_ZONE in graphite-web config file local_settings.py is set to America/New_York, then set
+  timezoneOffset to "-0500" (for UTC - 5 hours)
+Example:
+  If TIME_ZONE is set to UTC, set this to "0000"
+Default is '0000'
+
+#####`playlist_timespan`
+
+Playlist timespan.
+Default is '1m'
+
+#####`max_results`
+
+Specify the limit for dashboard search results.
+Default is 20
+
 ##Requirements
 
 ###Modules needed:
@@ -70,7 +193,7 @@ stdlib by puppetlabs
 
 ##Limitations
 
-This module is tested on CentOS 6.5 and Debian 7 (Wheezy) and should also run without problems on
+This module is tested on CentOS 6.5 and should also run without problems on
 
 * RHEL/CentOS/Scientific 6+
 * Debian 6+
