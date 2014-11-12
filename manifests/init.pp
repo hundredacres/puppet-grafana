@@ -57,6 +57,9 @@
 # [*playlist_timespan*]
 #   Playlist timespan.
 #   Default is '1m'
+# [*max_results*]
+#   Specify the limit for dashboard search results.
+#   Default is 20
 #
 class grafana (
   $version            = '1.8.1',
@@ -75,7 +78,8 @@ class grafana (
   $influxdb_grafana_user      = 'grafana',
   $influxdb_grafana_pass      = 'grafana',
   $timezone_offset    = '0000',
-  $playlist_timespan  = '1m'
+  $playlist_timespan  = '1m',
+  $max_results        = 20,
 ) {
   Exec {
     path => [ '/bin', '/usr/bin', '/usr/local/bin' ],

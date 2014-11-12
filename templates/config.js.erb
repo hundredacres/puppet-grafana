@@ -58,7 +58,7 @@ function (Settings) {
 
     // specify the limit for dashboard search results
     search: {
-      max_results: 20
+      max_results: <%= scope.lookupvar('grafana::max_results') %>
     },
 
     // default start dashboard
