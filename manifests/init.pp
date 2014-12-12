@@ -6,7 +6,7 @@
 #
 # [*version*]
 #   Version of grafan to be installed.
-#   Default is '1.8.1'
+#   Default is '1.9.0'
 # [*install_dir*]
 #   Install directory of grafana.
 #   Default is '/opt'
@@ -62,7 +62,7 @@
 #   Default is 20
 #
 class grafana (
-  $version            = '1.8.1',
+  $version            = '1.9.0',
   $install_dir        = '/opt',
   $graphite_host      = 'localhost',
   $graphite_port      = 80,
