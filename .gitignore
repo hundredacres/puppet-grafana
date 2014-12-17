@@ -8,6 +8,12 @@
 /test/tmp/
 /test/version_tmp/
 /tmp/
+pkg/
+Gemfile.lock
+.rspec_system
+*.swp
+.bundle/
+spec/fixtures/
 
 ## Specific to RubyMotion:
 .dat*
