@@ -32,7 +32,7 @@ moment you will need modules like apache or nginx to configure the webservices w
 
 ###Beginning with Grafana
 
-Install Grafana with default parameters. In this case grafana will be 
+Install Grafana with default parameters. In this case grafana will be
 installed at /opt/grafana and it will listen on localhost:80 for a graphite
 server. You will also need the apache module (or nginx, etc.)
 
@@ -40,7 +40,7 @@ Here we configure Apache 2.2 with Grafana on port 8080.
 ```puppet
 
   class { 'apache': default_vhost => false }
-    
+
   apache::vhost { 'my.grafana.domain':
     servername      => 'my.grafana.domain',
     port            => 8080,
