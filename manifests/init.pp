@@ -10,12 +10,18 @@
 # [*install_dir*]
 #   Install directory of grafana.
 #   Default is '/opt'
+# [*graphite_scheme*]
+#   Scheme of graphite service.
+#   Default is 'http'
 # [*graphite_host*]
 #   Hostname of graphite server.
 #   Default is 'localhost'
 # [*graphite_port*]
 #   Port of graphite service.
 #   Default is 80
+# [*elasticsearch_scheme*]
+#   Scheme of elasticsearch service.
+#   Default is 'http'
 # [*elasticsearch_host*]
 #   Hostname of elasticsearch. You will need an elasticsearch
 #   for saving dashboards
@@ -23,12 +29,18 @@
 # [*elasticsearch_port*]
 #   Port of elasticsearch service.
 #   Default is 9200
+# [*opentsdb_scheme*]
+#   Scheme of OpenTSDB service.
+#   Default is 'http'
 # [*opentsdb_host*]
 #   Hostname of OpenTSDB.
 #   Default is '' (empty)
 # [*opentsdb_port*]
 #   Port of OpenTSDB service.
 #   Default is 4242
+# [*influxdb_scheme*]
+#   Scheme of influxdb.
+#   Default is 'http'
 # [*influxdb_host*]
 #   Hostname of influxdb.
 #   Default is '' (empty)
@@ -62,24 +74,28 @@
 #   Default is 20
 #
 class grafana (
-  $version            = '1.9.0',
-  $install_dir        = '/opt',
-  $graphite_host      = 'localhost',
-  $graphite_port      = 80,
-  $elasticsearch_host = '',
-  $elasticsearch_port = 9200,
-  $opentsdb_host      = '',
-  $opentsdb_port      = 4242,
-  $influxdb_host      = '',
-  $influxdb_port      = 8086,
-  $influxdb_dbpath    = '/db/grafana',
-  $influxdb_user      = 'grafana',
-  $influxdb_pass      = 'grafana',
-  $influxdb_grafana_user      = 'grafana',
-  $influxdb_grafana_pass      = 'grafana',
-  $timezone_offset    = '0000',
-  $playlist_timespan  = '1m',
-  $max_results        = 20,
+  $version               = '1.9.0',
+  $install_dir           = '/opt',
+  $graphite_scheme       = 'http',
+  $graphite_host         = 'localhost',
+  $graphite_port         = 80,
+  $elasticsearch_scheme  = 'http',
+  $elasticsearch_host    = '',
+  $elasticsearch_port    = 9200,
+  $opentsdb_scheme       = 'http',
+  $opentsdb_host         = '',
+  $opentsdb_port         = 4242,
+  $influxdb_scheme       = 'http',
+  $influxdb_host         = '',
+  $influxdb_port         = 8086,
+  $influxdb_dbpath       = '/db/grafana',
+  $influxdb_user         = 'grafana',
+  $influxdb_pass         = 'grafana',
+  $influxdb_grafana_user = 'grafana',
+  $influxdb_grafana_pass = 'grafana',
+  $timezone_offset       = '0000',
+  $playlist_timespan     = '1m',
+  $max_results           = 20,
 ) {
   Exec {
     path => [ '/bin', '/usr/bin', '/usr/local/bin' ],
