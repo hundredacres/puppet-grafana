@@ -15,14 +15,14 @@ function (Settings) {
     <% if scope.lookupvar('grafana::graphite_host') != '' -%>
       graphite: {
         type: 'graphite',
-        url: "http://<%= scope.lookupvar('grafana::graphite_host') %>:<%= scope.lookupvar('grafana::graphite_port') %>",
+        url: "<%= scope.lookupvar('grafana::graphite_scheme') %>://<%= scope.lookupvar('grafana::graphite_host') %>:<%= scope.lookupvar('grafana::graphite_port') %>",
         default: true
       },
     <% end %>
     <% if scope.lookupvar('grafana::elasticsearch_host') != '' -%>
       elasticsearch: {
         type: 'elasticsearch',
-        url: "http://<%= scope.lookupvar('grafana::elasticsearch_host') %>:<%= scope.lookupvar('grafana::elasticsearch_port') %>",
+        url: "<%= scope.lookupvar('grafana::elasticsearch_scheme') %>://<%= scope.lookupvar('grafana::elasticsearch_host') %>:<%= scope.lookupvar('grafana::elasticsearch_port') %>",
         index: 'grafana-dash',
         grafanaDB: true,
       }
@@ -31,20 +31,20 @@ function (Settings) {
     <% if scope.lookupvar('grafana::opentsdb_host') != '' -%>
       opentsdb: {
         type: 'opentsdb',
-        url: "http://<%= scope.lookupvar('grafana::opentsdb_host') %>:<%= scope.lookupvar('grafana::opentsdb_port') %>",
+        url: "<%= scope.lookupvar('grafana::opentsdb_scheme') %>://<%= scope.lookupvar('grafana::opentsdb_host') %>:<%= scope.lookupvar('grafana::opentsdb_port') %>",
       },
     <% end %>
 
     <% if scope.lookupvar('grafana::influxdb_host') != '' -%>
       influxdb: {
         type: 'influxdb',
-        url: "http://<%= scope.lookupvar('grafana::influxdb_host') %>:<%= scope.lookupvar('grafana::influxdb_port') %><%= scope.lookupvar('grafana::influxdb_dbpath') %>",
+        url: "<%= scope.lookupvar('grafana::influxdb_scheme') %>://<%= scope.lookupvar('grafana::influxdb_host') %>:<%= scope.lookupvar('grafana::influxdb_port') %><%= scope.lookupvar('grafana::influxdb_dbpath') %>",
         username: '<%= scope.lookupvar('grafana::influxdb_user') %>',
         password: '<%= scope.lookupvar('grafana::influxdb_pass') %>'
       },
       grafana: {
           type: 'influxdb',
-          url: "http://<%= scope.lookupvar('grafana::influxdb_host') %>:<%= scope.lookupvar('grafana::influxdb_port') %>/db/grafana",
+          url: "<%= scope.lookupvar('grafana::influxdb_scheme') %>://<%= scope.lookupvar('grafana::influxdb_host') %>:<%= scope.lookupvar('grafana::influxdb_port') %>/db/grafana",
           username: '<%= scope.lookupvar('grafana::influxdb_grafana_user') %>',
           password: '<%= scope.lookupvar('grafana::influxdb_grafana_pass') %>',
           grafanaDB: true

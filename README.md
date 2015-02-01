@@ -103,6 +103,11 @@ Default is '1.8.1'
 Install directory of grafana.
 Default is '/opt'
 
+#####`graphite_scheme`
+
+Scheme of graphite service.
+Default is 'http'
+
 #####`graphite_host`
 
 Hostname of graphite server.
@@ -112,6 +117,11 @@ Default is 'localhost'
 
 Port of graphite service.
 Default is 80
+
+#####`elasticsearch_scheme`
+
+Scheme of elasticsearch service.
+Default is 'http'
 
 #####`elasticsearch_host`
 
@@ -124,6 +134,11 @@ Default is '' (empty)
 Port of elasticsearch service.
 Default is 9200
 
+#####`opentsdb_scheme`
+
+Scheme of OpenTSDB service.
+Default is 'http'
+
 #####`opentsdb_host`
 
 Hostname of OpenTSDB.
@@ -133,6 +148,11 @@ Default is '' (empty)
 
 Port of OpenTSDB service.
 Default is 4242
+
+#####`influxdb_scheme`
+
+Scheme of influxdb.
+Default is 'http'
 
 #####`influxdb_host`
 
