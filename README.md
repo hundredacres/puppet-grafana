@@ -96,7 +96,7 @@ This is the primary class. And the only one which should be used.
 #####`version`
 
 Version of grafan to be installed.
-Default is '1.8.1'
+Default is '1.9.1'
 
 #####`install_dir`
 
