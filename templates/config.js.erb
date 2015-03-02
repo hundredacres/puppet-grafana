@@ -25,12 +25,13 @@ function (Settings) {
         url: "<%= scope.lookupvar('grafana::elasticsearch_scheme') %>://<%= scope.lookupvar('grafana::elasticsearch_host') %>:<%= scope.lookupvar('grafana::elasticsearch_port') %>",
         index: 'grafana-dash',
         grafanaDB: true,
-      }
+      },
     <% end -%>
 
     <% if scope.lookupvar('grafana::opentsdb_host') != '' -%>
       opentsdb: {
         type: 'opentsdb',
+        default: true,
         url: "<%= scope.lookupvar('grafana::opentsdb_scheme') %>://<%= scope.lookupvar('grafana::opentsdb_host') %>:<%= scope.lookupvar('grafana::opentsdb_port') %>",
       },
     <% end %>
