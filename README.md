@@ -24,6 +24,8 @@ This module installs and configures for grafana.
 This module is intended to be used in combination with [puppet-graphite](https://forge.puppetlabs.com/dwerder/graphite). At the
 moment you will need modules like apache or nginx to configure the webservices which will serve the grafana scripts.
 
+Github Master: [![Build Status](https://secure.travis-ci.org/echocat/puppet-grafana.png?branch=master)](https://travis-ci.org/echocat/puppet-grafana)
+
 ##Setup
 
 **What grafana affects:**
