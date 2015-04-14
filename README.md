@@ -203,6 +203,11 @@ Default is '1m'
 Specify the limit for dashboard search results.
 Default is 20
 
+#####`default_route`
+
+Default dashboard to route to.
+Default is '/dashboard/file/default.json'
+
 ##Requirements
 
 ###Modules needed:
