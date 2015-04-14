@@ -72,6 +72,9 @@
 # [*max_results*]
 #   Specify the limit for dashboard search results.
 #   Default is 20
+# [*default_route*]
+#   Default dashboard to route to.
+#   Default is '/dashboard/file/default.json'
 #
 class grafana (
   $version               = '1.9.1',
@@ -96,6 +99,7 @@ class grafana (
   $timezone_offset       = '0000',
   $playlist_timespan     = '1m',
   $max_results           = 20,
+  $default_route         = '/dashboard/file/default.json',
 ) {
   Exec {
     path => [ '/bin', '/usr/bin', '/usr/local/bin' ],
