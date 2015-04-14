@@ -1,3 +1,13 @@
+## 2015-04-14 - 1.2.0 (Feature/Bugfix release)
+
+#### Features
+
+- set route to default.json with parameter `default_route`
+
+#### Bugfixes
+
+- fix a lot of rspec tests
+
 ## 2015-02-11 - 1.1.0 (Feature release)
 
 #### Features:
