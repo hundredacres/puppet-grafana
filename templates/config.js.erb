@@ -23,7 +23,7 @@ function (Settings) {
       elasticsearch: {
         type: 'elasticsearch',
         url: "<%= scope.lookupvar('grafana::elasticsearch_scheme') %>://<%= scope.lookupvar('grafana::elasticsearch_host') %>:<%= scope.lookupvar('grafana::elasticsearch_port') %>",
-        index: 'grafana-dash',
+        index: '<%= scope.lookupvar('grafana::elasticsearch_index') %>',
         grafanaDB: true,
       },
     <% end -%>

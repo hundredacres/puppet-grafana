@@ -29,6 +29,9 @@
 # [*elasticsearch_port*]
 #   Port of elasticsearch service.
 #   Default is 9200
+# [*elasticsearch_index*]
+#   Name of elasticsearch index.
+#   Default is 'grafana-dash'
 # [*opentsdb_scheme*]
 #   Scheme of OpenTSDB service.
 #   Default is 'http'
@@ -85,6 +88,7 @@ class grafana (
   $elasticsearch_scheme  = 'http',
   $elasticsearch_host    = '',
   $elasticsearch_port    = 9200,
+  $elasticsearch_index   = 'grafana-dash',
   $opentsdb_scheme       = 'http',
   $opentsdb_host         = '',
   $opentsdb_port         = 4242,

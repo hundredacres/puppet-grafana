@@ -136,6 +136,11 @@ Default is '' (empty)
 Port of elasticsearch service.
 Default is 9200
 
+#####`elasticsearch_index`
+
+Name of elasticsearch index.
+Default is 'grafana-dash;
+
 #####`opentsdb_scheme`
 
 Scheme of OpenTSDB service.
