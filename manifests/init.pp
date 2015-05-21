@@ -4,8 +4,11 @@
 #
 # === Parameters
 #
+# [*package_base*]
+#   The base url for all packages.
+#   Default is 'http://grafanarel.s3.amazonaws.com'
 # [*version*]
-#   Version of grafan to be installed.
+#   Version of grafana to be installed.
 #   Default is '1.9.1'
 # [*install_dir*]
 #   Install directory of grafana.
@@ -80,6 +83,7 @@
 #   Default is '/dashboard/file/default.json'
 #
 class grafana (
+  $package_base          = 'http://grafanarel.s3.amazonaws.com',
   $version               = '1.9.1',
   $install_dir           = '/opt',
   $graphite_scheme       = 'http',

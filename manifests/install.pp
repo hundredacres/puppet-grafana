@@ -11,7 +11,7 @@ class grafana::install {
 
   exec {
     'Download Grafana':
-      command => "curl -s -L http://grafanarel.s3.amazonaws.com/grafana-${::grafana::version}.tar.gz | tar xz",
+      command => "curl -s -L ${::grafana:package_base}/grafana-${::grafana::version}.tar.gz | tar xz",
       cwd     => $::grafana::install_dir,
       creates => "${::grafana::install_dir}/grafana-${::grafana::version}"
   }->
