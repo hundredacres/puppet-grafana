@@ -95,9 +95,14 @@ This is the primary class. And the only one which should be used.
 
 **Parameters within `graphite`:**
 
+#####`package_base`
+
+The base url for all packages.
+Default is 'http://grafanarel.s3.amazonaws.com'
+
 #####`version`
 
-Version of grafan to be installed.
+Version of grafana to be installed.
 Default is '1.9.1'
 
 #####`install_dir`
