@@ -90,6 +90,7 @@ class grafana (
   $version               = '1.9.1',
   $install_dir           = $::grafana::params::install_dir,
   $manage_repo           = $::grafana::params::manage_repo,
+  $pkgsource             = $::grafana::params::pkgsource,
   $graphite_scheme       = 'http',
   $graphite_host         = 'localhost',
   $graphite_port         = 80,
@@ -118,6 +119,9 @@ class grafana (
     cwd  => '/',
   }
 
+  if $::grafana::manage_repo {
+    include grafana::repo
+  }
   # The anchor resources allow the end user to establish relationships
   # to the "main" class and preserve the relationship to the
   # implementation classes through a transitive relationship to
