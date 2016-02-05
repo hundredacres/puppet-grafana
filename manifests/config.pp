@@ -8,9 +8,8 @@
 # None.
 #
 class grafana::config {
-  file {
-    "${::grafana::install_dir}/grafana/config.js":
+  file { "${::grafana::install_dir}/${::grafana::config_file}":
       ensure  => file,
-      content => template('grafana/config.js.erb')
+      content => template($::grafana::config_tmpl),
   }
 }

@@ -13,6 +13,9 @@
 # [*install_dir*]
 #   Install directory of grafana.
 #   Default is '/opt'
+# [*manage_repo*]
+#   Setup grafana yum repo.
+#   Default is true
 # [*graphite_scheme*]
 #   Scheme of graphite service.
 #   Default is 'http'
@@ -85,7 +88,8 @@
 class grafana (
   $package_base          = 'http://grafanarel.s3.amazonaws.com',
   $version               = '1.9.1',
-  $install_dir           = '/opt',
+  $install_dir           = $::grafana::params::install_dir,
+  $manage_repo           = $::grafana::params::manage_repo,
   $graphite_scheme       = 'http',
   $graphite_host         = 'localhost',
   $graphite_port         = 80,
