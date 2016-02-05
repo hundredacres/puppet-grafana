@@ -113,7 +113,7 @@ class grafana (
   $playlist_timespan     = '1m',
   $max_results           = 20,
   $default_route         = '/dashboard/file/default.json',
-) {
+) inherits grafana::params {
   Exec {
     path => [ '/bin', '/usr/bin', '/usr/local/bin' ],
     cwd  => '/',

@@ -13,8 +13,8 @@ class grafana::params {
     default => 'grafana.ini',
   }
   $config_tmpl = $pkgsource ? {
-    'yum'   => 'grafana/grafana.ini.erb',
+    'yum'   => 'grafana/config.ini.erb',
     'pkg'   => 'grafana/config.js.erb',
-    default => 'grafana/grafana.ini.erb',
+    default => 'grafana/config.ini.erb',
   }
 }
