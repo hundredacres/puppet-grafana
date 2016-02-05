@@ -1,5 +1,5 @@
 class grafana::repo {
-  yum::managed_repo { 'grafana':
+  yum::managed_yumrepo { 'grafana':
     baseurl       => 'https://packagecloud.io/grafana/stable/el/6/$basearch',
     enabled       => 1,
     gpgcheck      => 1,
