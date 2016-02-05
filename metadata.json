@@ -38,6 +38,10 @@
     {
       "name": "puppetlabs/stdlib",
       "version_requirement": ">= 3.2.0"
+    },
+    {
+      "name": "computology/packagecloud",
+      "version_requirement": ">= 0.2.11"
     }
   ]
 }
