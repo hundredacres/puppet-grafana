@@ -22,7 +22,7 @@ class grafana::install {
         target => "${::grafana::install_dir}/grafana-${real_version}",
     }
   } elsif $::grafana::pkgsource == 'yum' {
-    package { 'grafana-server':
+    package { 'grafana':
       ensure => present,
     }
   }
